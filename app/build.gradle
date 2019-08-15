@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.example.populararticles"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "BASE_URL", "\"http://api.nytimes.com/\""
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "String", "API_KEY", "\"aZ9I442CIUq1gSWQCfVLhhP28OLIQCvp\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "API_KEY", "\"aZ9I442CIUq1gSWQCfVLhhP28OLIQCvp\""
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Support libraries
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
+    implementation "androidx.appcompat:appcompat:$version_support"
+    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    implementation "com.google.android.material:material:$version_material"
+    implementation "androidx.test.espresso:espresso-idling-resource:$version_espresso"
+
+    // Android KTX
+    implementation "androidx.core:core-ktx:$version_core"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
+
+    // Architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
+    implementation "android.arch.persistence.room:runtime:$version_room"
+    kapt "android.arch.persistence.room:compiler:$version_room"
+
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$version_retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$version_okhttp"
+    implementation "com.google.code.gson:gson:$version_retrofit"
+
+
+    // Moshi for parsing the JSON format
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$version_timber"
+
+    // Dependencies for local unit tests
+    testImplementation "org.mockito:mockito-core:$version_mockito"
+
+    // Dependencies for Instrumentation tests
+    androidTestImplementation "androidx.test.ext:junit:$version_junit_ext"
+
+    // Espresso UI Testing
+    androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$version_espresso"
+
+    // Testing Architecture components
+    testImplementation "android.arch.core:core-testing:$version_lifecycle_extensions"
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation "androidx.test:runner:$version_runner"
+    androidTestImplementation  "androidx.test:rules:$version_rules"
+    androidTestImplementation  "org.amshove.kluent:kluent:$version_kluent"
+    androidTestImplementation  "org.amshove.kluent:kluent-android:$version_kluent"
+
+
+}

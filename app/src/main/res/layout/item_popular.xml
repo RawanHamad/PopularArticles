@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="feed"
+                type="com.example.populararticles.ui.popular.PopularArticleView"/>
+    </data>
+
+
+    <RelativeLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/articleImageView"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/list_image_size"
+                android:layout_height="@dimen/list_image_size"
+                app:imageUrl="@{feed.imageUrl}"
+                android:src="@drawable/image_placeholder"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moreIcon"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/ic_more"
+                android:layout_alignParentEnd="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/articleTitleTextView"
+                android:layout_width="0dp"
+                android:text="@{feed.title}"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginStart="@dimen/small_margin"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="@string/article_title_placeholder"
+                android:layout_toEndOf="@id/articleImageView"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_toStartOf="@id/moreIcon"
+        />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/authorTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{feed.byline}"
+                android:layout_below="@id/articleTitleTextView"
+                android:layout_toEndOf="@id/articleImageView"
+                android:layout_toStartOf="@id/moreIcon"
+                style="@style/TextAppearance.AppCompat.Small"
+                tools:text="@string/byline_placeholder"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dateTextView"
+                android:drawableStart="@drawable/ic_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{feed.publishedDate}"
+                android:layout_below="@id/authorTextView"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_toStartOf="@id/moreIcon"
+                tools:text="@string/date_placeholder"/>
+
+
+    </RelativeLayout>
+
+</layout>

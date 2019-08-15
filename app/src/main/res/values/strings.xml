@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Popular Articles</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
+    <string name="home">Home</string>
+    <string name="popular">Popular</string>
+    <string name="refresh">Refresh</string>
+    <string name="failure_network_connection">No network Connection</string>
+    <string name="failure_server_error">Server Error</string>
+    <string name="not_data_available">No Data Available</string>
+    <string name="article_title_placeholder">title</string>
+    <string name="byline_placeholder">byline</string>
+    <string name="date_placeholder">date</string>
+
+</resources>

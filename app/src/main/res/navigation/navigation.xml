@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/popularFragment"
+            android:id="@+id/navigation"
+            android:label="@string/app_name">
+
+
+
+    <fragment android:id="@+id/popularFragment"
+              android:name="com.example.populararticles.ui.popular.PopularArticlesListFragment"
+              android:label="@string/app_name"/>
+
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.example.populararticles.ui.home.HomeFragment"
+            android:label="@string/home"
+            tools:layout="@layout/fragment_home" />
+
+    <fragment
+            android:id="@+id/aboutFragment"
+            android:name="com.example.populararticles.ui.about.AboutFragment"
+            android:label="@string/about"
+            tools:layout="@layout/fragment_about" />
+
+</navigation>

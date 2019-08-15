@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_margin">8dp</dimen>
+    <dimen name="height_toolbar">55dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="list_image_size">48dp</dimen>
+    <dimen name="icon_size">18dp</dimen>
+    <dimen name="medium_margin">18dp</dimen>
+
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+
+    <dimen name="not_data_available">34sp</dimen>
+    <dimen name="feed_details_title">22sp</dimen>
+    <dimen name="feed_details_text">16sp</dimen>
+    <dimen name="feed_details_notes">14sp</dimen>
+</resources>
